@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,7 +19,15 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'impact': ['Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'sans-serif'],
+				'papyrus': ['Papyrus', 'fantasy'],
+				'alpha': ['Anton', 'sans-serif']
+			},
 			colors: {
+				'alpha-red': '#ea384c',
+				'alpha-gold': '#FFD700',
+				'alpha-black': '#000000',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -84,11 +93,36 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-intense': {
+					'0%, 100%': {
+						transform: 'scale(1)',
+						opacity: '1',
+						boxShadow: '0 0 20px rgba(234, 56, 76, 0.7)'
+					},
+					'50%': {
+						transform: 'scale(1.05)',
+						opacity: '0.9',
+						boxShadow: '0 0 30px rgba(234, 56, 76, 0.9)'
+					}
+				},
+				'color-change': {
+					'0%': { color: '#ea384c' },
+					'33%': { color: '#FFD700' },
+					'66%': { color: '#ffffff' },
+					'100%': { color: '#ea384c' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-intense': 'pulse-intense 2s infinite',
+				'color-change': 'color-change 5s infinite',
+				'float': 'float 3s ease-in-out infinite'
 			}
 		}
 	},

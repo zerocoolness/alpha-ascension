@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { AlertTriangle } from "lucide-react";
 import { toast } from "sonner";
@@ -19,7 +18,6 @@ const Contact = () => {
   
   const [errors, setErrors] = useState<Record<string, string>>({});
   
-  // Handle input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
     setFormData({
@@ -27,7 +25,6 @@ const Contact = () => {
       [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
     });
     
-    // Clear error for this field
     if (errors[name]) {
       setErrors({
         ...errors,
@@ -36,7 +33,6 @@ const Contact = () => {
     }
   };
   
-  // Form validation
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
     
@@ -82,7 +78,6 @@ const Contact = () => {
     return Object.keys(newErrors).length === 0;
   };
   
-  // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -92,7 +87,6 @@ const Contact = () => {
         duration: 5000
       });
       
-      // Reset form
       setFormData({
         name: "",
         email: "",
@@ -115,7 +109,6 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-alpha-black">
-      {/* Hero Section */}
       <section className="py-12 bg-gradient-to-r from-alpha-black via-[#222] to-alpha-black">
         <div className="container mx-auto px-4 text-center">
           <h1 className="alpha-headline mb-6">JOIN THE ELITE</h1>
@@ -126,30 +119,26 @@ const Contact = () => {
         </div>
       </section>
       
-      {/* Main Content */}
       <section className="py-12 bg-alpha-black">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            {/* Disclaimer Banner */}
             <div className="bg-alpha-red/20 border border-alpha-red rounded-md p-4 mb-8 flex items-start gap-3">
               <AlertTriangle className="text-alpha-red flex-shrink-0 mt-1" size={20} />
               <div>
-                <h3 className="font-bold text-white mb-1">SATIRE DISCLAIMER</h3>
+                <h3 className="font-bold text-white mb-1">BETA DETECTOR ACTIVATED</h3>
                 <p className="text-gray-300 text-sm">
-                  This form is completely satirical and parodies the invasive, absurd information 
-                  often requested by "alpha male" programs. No actual data collection takes place, 
-                  and this entire website is a parody. Feel free to fill it out for fun!
+                  This form is completely satirical. If you actually fill this out thinking it's real, 
+                  you might also be the type who thinks watching wolf documentaries raises your testosterone. 
+                  Go touch grass, you absolute turnip!
                 </p>
               </div>
             </div>
             
-            {/* Application Form */}
             <div className="bg-gradient-to-b from-[#111] to-[#000] rounded-lg p-6 md:p-8 shadow-lg border border-gray-800">
               <h2 className="font-impact text-2xl text-alpha-gold mb-6">ALPHA APPLICATION FORM</h2>
               
               <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Basic Information */}
                   <div className="col-span-1 md:col-span-2">
                     <h3 className="font-impact text-xl text-alpha-red mb-4">BASIC INFORMATION</h3>
                   </div>
@@ -227,7 +216,6 @@ const Contact = () => {
                     {errors.bloodType && <p className="text-alpha-red text-sm mt-1">{errors.bloodType}</p>}
                   </div>
                   
-                  {/* Alpha Metrics */}
                   <div className="col-span-1 md:col-span-2 mt-4">
                     <h3 className="font-impact text-xl text-alpha-red mb-4">ALPHA METRICS</h3>
                   </div>
@@ -337,7 +325,6 @@ const Contact = () => {
                     </div>
                   </div>
                   
-                  {/* Terms and Conditions */}
                   <div className="col-span-1 md:col-span-2 mt-4">
                     <div className="bg-black border border-gray-800 rounded-md p-4 mb-4 h-40 overflow-y-auto text-gray-400 text-sm">
                       <p className="mb-2">By submitting this form, you agree to the following ridiculous terms:</p>
@@ -370,7 +357,6 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                {/* Submit Button */}
                 <div className="mt-8">
                   <button 
                     type="submit"
@@ -388,7 +374,6 @@ const Contact = () => {
         </div>
       </section>
       
-      {/* FAQ Section */}
       <section className="py-12 bg-gradient-to-r from-alpha-black via-[#222] to-alpha-black">
         <div className="container mx-auto px-4">
           <h2 className="alpha-headline text-center mb-12">APPLICATION FAQ</h2>
@@ -416,7 +401,7 @@ const Contact = () => {
             
             <FaqItem 
               question="Is this application serious?"
-              answer="No! This entire website is SATIRE designed to parody and mock the ridiculous world of 'alpha male' gurus, coaches, and influencers. No actual data is collected, no real services are offered, and the form exists purely as comedy."
+              answer="No, you absolute clown! This entire website is SATIRE designed to mock 'alpha male' gurus. If you can't figure that out, you probably also think chocolate milk comes from brown cows and that your zodiac sign determines your personality. Step away from the computer and reconsider your life choices, you magnificent specimen of gullibility."
             />
           </div>
         </div>
@@ -425,7 +410,6 @@ const Contact = () => {
   );
 };
 
-// FAQ Item Component
 const FaqItem = ({ question, answer }: { question: string; answer: string }) => {
   const [isOpen, setIsOpen] = useState(false);
   

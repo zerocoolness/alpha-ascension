@@ -20,16 +20,16 @@ const queryClient = new QueryClient();
 
 // Popup messages for the satire site
 const popupMessages = [
-  "🔥 LIMITED TIME OFFER: Buy one course, get zero free! 🔥",
-  "⚠️ WARNING: Your testosterone levels are critically LOW! Click to BOOST NOW!",
-  "🚨 The Deep State doesn't want you to know these SECRETS!",
-  "💪 Is your masculinity being threatened? Take our FREE quiz!",
-  "💰 Crypto Masters are making MILLIONS while you sleep! Join NOW!",
-  "🧠 Unlock your SIGMA MINDSET or stay a BETA forever!",
-  "🥩 Are you eating enough RAW MEAT? Your ancestors are DISAPPOINTED!",
-  "⏰ HURRY! This offer EXPIRES in 5... 4... 3...",
-  "🐺 Join the WOLF PACK or remain a SHEEP! Your choice!",
-  "🧊 Take the ICE BATH CHALLENGE! Weak men can't handle it!",
+  "🔥 LIMITED TIME OFFER: Buy one course, get zero free! Only true alphas pay full price! 🔥",
+  "⚠️ WARNING: Your testosterone levels are critically LOW! Unless you buy our products, you'll grow a man-bun by tomorrow!",
+  "🚨 The Deep State doesn't want you to know these SECRETS because they're completely made up!",
+  "💪 Is your masculinity being threatened? Our quiz will confirm it is, regardless of your answers!",
+  "💰 Crypto Masters are making MILLIONS while you sleep! And by 'masters' we mean 'scammers'!",
+  "🧠 Unlock your SIGMA MINDSET or remain a BETA forever! Side effects include: alienating friends and family!",
+  "🥩 Are you eating enough RAW MEAT? Your ancestors are DISAPPOINTED! (And they had a 32-year life expectancy!)",
+  "⏰ HURRY! This offer EXPIRES in 5... 4... 3... but will mysteriously reappear tomorrow!",
+  "🐺 Join the WOLF PACK or remain a SHEEP! (Note: both are animals with minimal critical thinking skills!)",
+  "🧊 Take the ICE BATH CHALLENGE! Weak men can't handle it, smart men use central heating!",
 ];
 
 const App = () => {
@@ -38,8 +38,8 @@ const App = () => {
   useEffect(() => {
     // Show disclaimer toast
     if (!hasShownDisclaimer) {
-      toast("⚠️ SATIRE DISCLAIMER", {
-        description: "This website is SATIRE. It parodies alpha/sigma male influencer culture and related ideologies. None of this is real advice.",
+      toast("⚠️ FOR PEOPLE WITH BRAINS", {
+        description: "This website is SATIRE, you absolute potato. If you're taking ANY of this seriously, you might be the exact incel we're making fun of. Seek help immediately.",
         duration: 8000,
       });
       setHasShownDisclaimer(true);
@@ -53,7 +53,7 @@ const App = () => {
         position: Math.random() > 0.5 ? "top-right" : "bottom-left",
         action: {
           label: "CLAIM NOW!",
-          onClick: () => toast("🎣 Gotcha! That was a parody popup. No actual offers here."),
+          onClick: () => toast("🎣 Gotcha! What kind of beta actually clicks on popups? This is why you can't get dates."),
         },
       });
     }, 45000); // Show a popup every 45 seconds

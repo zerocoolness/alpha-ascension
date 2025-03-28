@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, Zap } from "lucide-react";
@@ -11,12 +10,10 @@ const Layout = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  // Close menu when route changes
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location.pathname]);
 
-  // Ridiculous announcements that rotate
   const announcements = [
     "🔥 NEW COURSE: 'How to Defeat the Matrix with Your Mind' - 97% OFF TODAY ONLY!",
     "⚠️ ATTENTION BETAS: Last chance to evolve before societal collapse!",
@@ -24,7 +21,6 @@ const Layout = () => {
     "💪 BREAKING: Studies show Alpha Males make 420% more money than Betas!",
   ];
 
-  // Cycle through announcements
   useEffect(() => {
     const intervalId = setInterval(() => {
       setAnnouncementIndex((prevIndex) => 
@@ -35,20 +31,19 @@ const Layout = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  // Cookie notice popup (parody)
   useEffect(() => {
     const hasSeenCookieNotice = localStorage.getItem("hasSeenCookieNotice");
     
     if (!hasSeenCookieNotice) {
       setTimeout(() => {
         toast("🍪 WE COLLECT ALL YOUR DATA", {
-          description: "By using this site, you agree to let us harvest your personal information, search history, and probably your dreams too. (This is a parody, we don't actually collect data).",
+          description: "By using this site, you agree to let us harvest your personal information, search history, and probably your dreams too. If you believe this, you also probably think chocolate milk comes from brown cows. (Obviously this is satire, you dense cabbage.)",
           duration: 10000,
           action: {
-            label: "I SUBMIT",
+            label: "I SUBMIT BECAUSE I'M BETA",
             onClick: () => {
               localStorage.setItem("hasSeenCookieNotice", "true");
-              toast("Good choice, SIGMA MALE! (Remember, this is just satire)");
+              toast("Congratulations on being gullible enough to click this! You're the reason Nigerian princes still have email campaigns.");
             },
           },
         });
@@ -58,7 +53,6 @@ const Layout = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-alpha-black">
-      {/* Announcement banner */}
       <div className="bg-alpha-red text-white font-impact text-center py-2 px-4 whitespace-nowrap overflow-hidden">
         <div className="animate-marquee">
           <span className="inline-block">
@@ -67,7 +61,6 @@ const Layout = () => {
         </div>
       </div>
       
-      {/* Header */}
       <header className="bg-gradient-to-r from-alpha-black via-[#222] to-alpha-black border-b-4 border-alpha-red sticky top-0 z-50">
         <div className="container mx-auto flex justify-between items-center p-4">
           <Link to="/" className="flex items-center space-x-2">
@@ -78,7 +71,6 @@ const Layout = () => {
             </div>
           </Link>
           
-          {/* Desktop Nav */}
           <nav className="hidden md:flex space-x-1">
             <NavLink to="/">HOME</NavLink>
             <NavLink to="/founder">THE FOUNDER</NavLink>
@@ -88,7 +80,6 @@ const Layout = () => {
             <NavLink to="/contact">JOIN NOW</NavLink>
           </nav>
           
-          {/* Mobile menu button */}
           <button 
             className="md:hidden p-2 text-alpha-gold hover:text-alpha-red transition-colors"
             onClick={toggleMenu}
@@ -98,7 +89,6 @@ const Layout = () => {
           </button>
         </div>
         
-        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden bg-alpha-black border-t-2 border-alpha-gold">
             <nav className="flex flex-col">
@@ -113,19 +103,17 @@ const Layout = () => {
         )}
       </header>
       
-      {/* Main Content */}
       <main className="flex-grow">
         <Outlet />
       </main>
       
-      {/* Footer */}
       <footer className="bg-gradient-to-r from-alpha-black via-[#222] to-alpha-black border-t-4 border-alpha-red py-8">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h3 className="font-impact text-alpha-gold text-xl mb-4">ALPHA ASCENSION</h3>
               <p className="text-gray-400 text-sm mb-4">The #1 Resource for Men Who Want to DOMINATE Life's Chess Board™</p>
-              <p className="text-gray-400 text-sm">This is a SATIRICAL website parodying alpha/sigma male culture. None of this is real advice.</p>
+              <p className="text-gray-400 text-sm">This is a SATIRICAL website. If you can't figure that out, you're probably the type who buys brain pills from podcast ads.</p>
             </div>
             
             <div>
@@ -140,20 +128,19 @@ const Layout = () => {
             
             <div>
               <h3 className="font-impact text-alpha-gold text-xl mb-4">LEGAL DISCLAIMERS</h3>
-              <p className="text-gray-400 text-sm">This site is pure satire. Any resemblance to actual "gurus" or "influencers" is entirely coincidental and definitely not a direct mockery of their ridiculous tactics. *wink*</p>
-              <p className="text-gray-400 text-sm mt-2">All rights reserved. Alpha Ascension Academy™ ©2024</p>
+              <p className="text-gray-400 text-sm">This site is pure satire. If you believe any of this is real advice, you might also think protein powder is giving you telepathy. You absolute walnut.</p>
+              <p className="text-gray-400 text-sm mt-2">All rights reserved. Alpha Ascension Academy™ ©2024 (Not a real trademark, you litigious beta)</p>
             </div>
           </div>
         </div>
       </footer>
       
-      {/* Fake "act now" popup that appears at bottom after scrolling */}
       <div className="fixed bottom-0 left-0 right-0 bg-alpha-red text-white font-impact text-center py-3 z-40 shadow-[0_-5px_15px_rgba(0,0,0,0.3)]">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-          <p className="mb-2 md:mb-0 text-lg uppercase">⏰ TIME IS RUNNING OUT! Become an APEX PREDATOR Today!</p>
+          <p className="mb-2 md:mb-0 text-lg uppercase">⏰ TIME IS RUNNING OUT! Only soy-boys hesitate!</p>
           <button 
             className="bg-alpha-gold text-alpha-black px-6 py-2 font-bold uppercase animate-pulse-intense"
-            onClick={() => toast("This is a SATIRICAL button! No actual offers here.")}
+            onClick={() => toast("Only a beta would click this button. Alphas slam their fist through the screen.")}
           >
             CLAIM YOUR POWER ⚡
           </button>
@@ -163,7 +150,6 @@ const Layout = () => {
   );
 };
 
-// Desktop Navigation Link
 const NavLink = ({ to, children }: { to: string; children: React.ReactNode }) => {
   const location = useLocation();
   const isActive = location.pathname === to;
@@ -181,7 +167,6 @@ const NavLink = ({ to, children }: { to: string; children: React.ReactNode }) =>
   );
 };
 
-// Mobile Navigation Link
 const MobileNavLink = ({ to, children }: { to: string; children: React.ReactNode }) => {
   const location = useLocation();
   const isActive = location.pathname === to;

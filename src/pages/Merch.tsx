@@ -270,11 +270,11 @@ const Merch = () => {
           <div className="bg-alpha-red/20 border border-alpha-red rounded-md p-4 flex items-start gap-3">
             <Info className="text-alpha-red flex-shrink-0 mt-1" size={20} />
             <div>
-              <h3 className="font-bold text-white mb-1">SATIRE DISCLAIMER</h3>
+              <h3 className="font-bold text-white mb-1">FOR THE SEVERELY BRAIN-DAMAGED</h3>
               <p className="text-gray-300 text-sm">
-                This entire store is satire. None of these products are real or for sale. The product descriptions 
-                parody the types of merchandise and marketing commonly found on "alpha male" websites. The outlandish claims 
-                made about product benefits are intentionally absurd and not meant to be taken seriously.
+                This entire store is satire. None of these products are real or for sale. If you were about to enter your credit 
+                card number, you're probably also the type who believes supplements can add inches to your... height. 
+                Put down the protein shake and develop some critical thinking skills, you magnificent buffoon.
               </p>
             </div>
           </div>

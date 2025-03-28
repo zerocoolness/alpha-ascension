@@ -243,7 +243,7 @@ const Contact = () => {
                       value={formData.height}
                       onChange={handleChange}
                       className={`w-full bg-black border ${errors.height ? 'border-alpha-red' : 'border-gray-800'} rounded-md p-3 text-white focus:border-alpha-gold focus:outline-none`}
-                      placeholder="6'2\" (Don't lie, we can tell)"
+                      placeholder="6'2&quot; (Don't lie, we can tell)"
                     />
                     {errors.height && <p className="text-alpha-red text-sm mt-1">{errors.height}</p>}
                   </div>

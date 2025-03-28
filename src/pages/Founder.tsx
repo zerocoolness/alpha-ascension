@@ -240,7 +240,7 @@ const Founder = () => {
               image="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
               name="Derek Mammoth"
               title="Wolf Pack Member"
-              quote="I used to be 5'8". After following Chad's height-increasing protocol, I'm now 6'3"! Scientists are BAFFLED! My jawline is also way more defined!"
+              quote="I used to be 5'8&quot;. After following Chad's height-increasing protocol, I'm now 6'3&quot;! Scientists are BAFFLED! My jawline is also way more defined!"
             />
             
             <TestimonialCard 
